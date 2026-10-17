@@ -52,8 +52,7 @@ func printStatus(w io.Writer, status agenttools.Status) {
 
 	quota := status.Quota
 	fmt.Fprintf(w, "Jobs:  %d running, %d in the last 7 days\n", status.JobsRunning, status.JobsLast7Days)
-	fmt.Fprintf(w, "Quota: repositories %d/%d, runners %d/%d, pool minutes this month %d/%d, pool runners %d/%d\n",
-		quota.RepositoriesEnabled, quota.MaxRepositories,
+	fmt.Fprintf(w, "Quota: runners %d/%d, pool minutes this month %d/%d, pool runners %d/%d\n",
 		quota.RunnersAllocated, quota.MaxConcurrentRunners,
 		quota.PoolMinutesUsed, quota.PoolMinutesMonthly,
 		quota.PoolRunnersAllocated, quota.MaxPoolRunners)

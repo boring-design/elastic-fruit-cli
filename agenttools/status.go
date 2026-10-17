@@ -52,7 +52,6 @@ type NextStep struct {
 
 // Quota is the free tier limits of the tenant next to the current use.
 type Quota struct {
-	MaxRepositories      int32 `json:"max_repositories"`
 	RepositoriesEnabled  int32 `json:"repositories_enabled"`
 	MaxConcurrentRunners int32 `json:"max_concurrent_runners"`
 	RunnersAllocated     int32 `json:"runners_allocated"`
@@ -182,7 +181,6 @@ func (t *Tools) InstallLink(ctx context.Context) (InstallLink, error) {
 
 func quotaFromProto(quota *cloudv1.TenantQuota) Quota {
 	return Quota{
-		MaxRepositories:      quota.GetMaxRepositories(),
 		RepositoriesEnabled:  quota.GetRepositoriesEnabled(),
 		MaxConcurrentRunners: quota.GetMaxConcurrentRunners(),
 		RunnersAllocated:     quota.GetRunnersAllocated(),
