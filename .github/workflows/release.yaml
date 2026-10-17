@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   goreleaser:
-    runs-on: ubuntu-latest
+    runs-on: elastic-fruit
     steps:
       - uses: actions/checkout@v4
         with:
